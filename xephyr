@@ -1,0 +1,5 @@
+#!/bin/sh
+
+Xephyr -ac -br -noreset -resizeable -screen 1366x768 :1 &
+sleep 1
+RUST_BACKTRACE=1 RUST_LOG=debug DISPLAY=:1 "./target/debug/wamuu-core"
